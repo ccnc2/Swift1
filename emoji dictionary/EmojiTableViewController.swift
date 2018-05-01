@@ -10,10 +10,12 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     
-    var emojis = ["😀", "💩", "🏎", "💒", "🍎", "😇", "🤩", "😎", "🕍"]
+    var emojis : [Emoji] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emojis = createEmojis()
 
     }
 
@@ -26,7 +28,9 @@ class EmojiTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
-        cell.textLabel?.text = emojis[indexPath.row]
+        let emoji = emojis[indexPath.row]
+        
+        cell.textLabel?.text = "\(emoji.emojiLook) - \(emoji.catergory)"
         
 
         return cell
@@ -41,7 +45,23 @@ class EmojiTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let emojiDefVC = segue.destination as! EmojiDefinitionViewController
-        emojiDefVC.emoji = sender as! String
+        emojiDefVC.emoji = sender as! Emoji
+    }
+    
+    func createEmojis() -> [Emoji] {
+        let smiley = Emoji()
+        smiley.emojiLook = "😀"
+        smiley.emojiDefinition = "Happy Face"
+        smiley.birthYear = 2010
+        smiley.catergory = "Faces"
+        
+        let apple = Emoji()
+        apple.emojiLook = "🍎"
+        apple.emojiDefinition = "Apple"
+        apple.birthYear = 2013
+        apple.catergory = "Food"
+        
+        return [smiley, apple]
     }
 
 }

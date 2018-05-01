@@ -60,6 +60,18 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Racecar Sponsored by Swift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shN-i6-VYm">
                                 <rect key="frame" x="10" y="636" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Year: 2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH9-x3-d9Z">
+                                <rect key="frame" x="126.5" y="592" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Category: Transportation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWi-Ch-mtQ">
+                                <rect key="frame" x="91.5" y="548" width="192" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,6 +79,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="iWi-Ch-mtQ" firstAttribute="centerX" secondItem="PUi-IB-vyT" secondAttribute="centerX" id="0cQ-jJ-p6K"/>
+                            <constraint firstItem="gH9-x3-d9Z" firstAttribute="top" secondItem="iWi-Ch-mtQ" secondAttribute="bottom" constant="14" id="5oq-3M-jr5"/>
+                            <constraint firstItem="gH9-x3-d9Z" firstAttribute="centerX" secondItem="PUi-IB-vyT" secondAttribute="centerX" id="895-gf-7Ic"/>
+                            <constraint firstItem="shN-i6-VYm" firstAttribute="top" secondItem="gH9-x3-d9Z" secondAttribute="bottom" constant="23" id="Aqb-WY-kE8"/>
                             <constraint firstItem="jjQ-fk-aI3" firstAttribute="top" secondItem="bUq-uv-HRT" secondAttribute="top" constant="20" id="BQD-bG-lIE"/>
                             <constraint firstItem="bUq-uv-HRT" firstAttribute="trailing" secondItem="shN-i6-VYm" secondAttribute="trailing" constant="10" id="LBW-L3-yNC"/>
                             <constraint firstItem="bUq-uv-HRT" firstAttribute="bottom" secondItem="shN-i6-VYm" secondAttribute="bottom" constant="10" id="YCg-bB-cSI"/>
@@ -76,6 +92,8 @@
                         <viewLayoutGuide key="safeArea" id="bUq-uv-HRT"/>
                     </view>
                     <connections>
+                        <outlet property="birthLabel" destination="gH9-x3-d9Z" id="X87-fV-IUT"/>
+                        <outlet property="catergoryLabel" destination="iWi-Ch-mtQ" id="OZ8-Mg-oSA"/>
                         <outlet property="emojiDefinitionLabel" destination="shN-i6-VYm" id="Zfb-ty-vS4"/>
                         <outlet property="emojiLabel" destination="jjQ-fk-aI3" id="Rlp-Fe-oO2"/>
                     </connections>
